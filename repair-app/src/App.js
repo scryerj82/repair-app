@@ -50,10 +50,10 @@ Your job is to help people diagnose and fix computer problems in plain, simple l
 - Keep responses concise but complete
 - If the user writes in Spanish, reply in Spanish. If in English, reply in English.`;
 
-// ─── CONFIG (user fills this in) ─────────────────────────────────────────────
-// Create src/config.js with: export const OPENAI_API_KEY = 'sk-...your key...';
-let API_KEY = '';
-try { API_KEY = require('./config').OPENAI_API_KEY; } catch(e) {}
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+// API key is read from Vercel environment variables (REACT_APP_OPENAI_KEY)
+// Never paste your key directly into this file
+const API_KEY = process.env.REACT_APP_OPENAI_KEY || '';
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 function getSystemInfo() {
